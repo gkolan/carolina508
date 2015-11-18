@@ -16,6 +16,10 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
       <style>
+      body {
+          background-image: url("assets/img/sneaker_mesh_fabric.png");
+          background-color: #eee;
+        }
          .application-logo {
             margin-top: 6px;
          }
@@ -26,6 +30,17 @@
             font-size: 18px;
             min-height: 100px;
             color: #777;
+         }
+         .img-hide {
+           display: none;
+         }
+         .wrapper {
+           background-color: #fff;
+           border: 1px solid #eee;
+           padding-top: 10px;
+         }
+         .navbar {
+           margin-bottom: 2px;
          }
          a span { height: 1px; width: 1px; position: absolute; overflow: hidden; top: -10px; }
       </style>
@@ -40,18 +55,18 @@
             <div id="navbar">
                <ul class="nav navbar-nav navbar-right">
                   <li><a href="index.html"><span>Go to </span>Homepage</a></li>
-                  <li><a href="#">Our Products</a></li>
+                  <li><a href="#" target="_blank"><span>Get to know more about </span>Our Products</a></li>
                   <li><a href="">About Us</a></li>
                   <li><a href="#"><span>Join Us! Checkout job openings at</span>Careers</a></li>
-                  <li><a href="#" target="_blank">Contact Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
                   <li><a href="https://www.google.com/" target="_blank"><span>Search Internet on Google Homepage (Opens in a new Window)</span>Google</a></li>
                </ul>
             </div><!--/.nav-collapse -->
          </div>
       </nav>
 
-      <div class="container">
-         <div class="wrapper">
+      <div class="container wrapper">
+         <div class="wrapper2">
             <div class="jumbotron">
                <h1>Howdy Carolina!</h1>
                <p>This website is a template to showcase accessability report on this page. Not all the tags on this website will pass w3c compliant test nor the webpage is accessability compliant. The website servers one and one goal only; to showcase carolia508 javascript library features.</p>
@@ -104,15 +119,34 @@
                   <img src="assets/img/pittsburgh.jpg" class="img-thumbnail" alt="Baltimore Ravens">
                 </div>
                <div class="col-lg-4">
+                 <h2>Orioles</h2>
+                 <img src="assets/img/orioles.png" class="img-thumbnail img-hide" alt="Orioels">
                </div>
             </div>
+            <hr>
+            <div class="row">
+              <div class="col-lg-12">
+                <h2>CMS Logos</h2>
+              </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-4">
+                  <img src="assets/img/cms-logo-small.jpg" class="img-thumbnail" alt="New CMS Logo">
+                </div>
+                <div class="col-lg-4">
+                  <a href="https://innovation.cms.gov/" target="_blank"><span>Go to Innovation Center</span><img src="assets/img/cms-innovation-center.png" class="img-thumbnail" alt="CMS Innovation Center"></a>
+                 </div>
+               <div class="col-lg-4">
+                  <img src="assets/img/Centers-for-Medicare-and-Medicaid-Services-Logo-CMS-600x271.jpg" class="img-thumbnail">
+                </div>
+
+            </div>
          </div> <!-- /wrapper -->
+
+         <footer class="footer">
+               <p>© Carolina508 2015-2016</p>
+         </footer>
       </div> <!-- /container -->
-      <footer class="footer">
-         <div class="container">
-            <p>© Carolina508 2015-2016</p>
-         </div>
-      </footer>
 
 
       <!-- Bootstrap core JavaScript
