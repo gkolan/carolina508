@@ -13,7 +13,7 @@ $('a').each(function(index, value){
    var href = $(this).attr("href");
    anchor["href"]    =  '<a href="'+href+'" target="_blank"><span>Opens in new window </span>'+href+'</a>';
    anchor["span"]   =  $(this).find("span").text();
-   anchor["text"]    =  $(this).text().replace(anchor["span"],'');;
+   anchor["text"]    =  $(this).text().replace(anchor["span"],'');
    anchor["code"]    =  $(this).clone().wrap('<p>').parent().html();
    var target        =  $(this).attr("target");
    if (target === undefined) {
@@ -133,5 +133,5 @@ $(".carolina-code").css({'font-family':'"Courier New", Courier, monospace','widt
 $(".carolina-code-inline").css({'font-family':'"Courier New", Courier, monospace','width':'100%','max-width':'100%','border':'none','background-color':'#EAEAEA','word-break': 'break-word','padding-left': '20px','padding-right': '20px'});
 $(".height-100").css({'height':'100px'});
 $(".section-information").css({'padding':'20px'});
-$("a span").css({'height':'1px','width':'1px','position':'absolute','overflow':'hidden','top':'-10px',});
+$("a span").css({'height':'1px','width':'1px','position':'absolute','overflow':'hidden','top':'-10px'});
 $(".word-break").css({'word-break':'break-word'});
