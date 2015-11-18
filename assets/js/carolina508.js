@@ -12,7 +12,10 @@ $('a').each(function(index, value){
    var anchor = {};
    var href = $(this).attr("href");
    anchor["href"]    =  '<a href="'+href+'" target="_blank"><span>Opens in new window </span>'+href+'</a>';
-   anchor["span"]   =  $(this).find("span").text();
+   anchor["span"]   =  $(this).attr("title");
+   if (anchor["span"] === undefined) {
+      anchor["span"] = "**undefined title attr**";
+   }
    anchor["text"]    =  $(this).text().replace(anchor["span"],'');
    anchor["code"]    =  $(this).clone().wrap('<p>').parent().html();
    var target        =  $(this).attr("target");
@@ -77,7 +80,7 @@ $( "#anchor-tag-name").html("anchor tag");
 $( "#anchor-tag-information").html("1. Link description should have abundant information and always include < span > for the screen readers as shown in the example on right.</br></br>2. Avoid making users open links in new window as there is no chance of back button. Accessibility person will face difficulty because of this. If it is unavoidable include that in < span > like this: (Opens in new window)");
 $( "#anchor-tag-example1").html("<b>Example (<a href='https://silktide.com/i-thought-title-text-improved-accessibility-i-was-wrong/' target='_blank'><span>Title text improved accessibility (Opens in new window) </span>source</a>)</b><br><br>a span { height: 1px; width: 1px; position: absolute; overflow: hidden; top: -10px; }");
 $( "#anchor-tag-example2").html('<a href="#"><span>Washington stimulates economic growth </span>Read More</a> Notice there is space before </span> this is to make sure screen reader does not read it as growthRead More');
-$('#carolina-anchor-section').append('<table class="fixed-layout" id="anchor-report"><tr class="white-background"><th class="border-B2B5C3-top-none padding-10 text-center report-srno">#</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-span-description">Span Description</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-description">Link Description</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-new-window">Opens in new window?</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-url">URL</th><th class="border-B2B5C3-top-none padding-10 text-center code-link">Code</th></tr></table>');
+$('#carolina-anchor-section').append('<table class="fixed-layout" id="anchor-report"><tr class="white-background"><th class="border-B2B5C3-top-none padding-10 text-center report-srno">#</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-span-description">Title Description</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-description">Link Description</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-new-window">Opens in new window?</th><th class="border-B2B5C3-top-none padding-10 text-center anchor-url">URL</th><th class="border-B2B5C3-top-none padding-10 text-center code-link">Code</th></tr></table>');
 for (var i = 0; i < anchor_tags.length; i++) {
    $('#anchor-report').append('<tr class="white-background word-break"><td class="border-B2B5C3-top-none padding-10 text-center report-srno">'+(i+1)+'</td><td class="border-B2B5C3-top-none padding-10 text-center anchor-description">'+anchor_tags[i].span+'</td><td class="border-B2B5C3-top-none padding-10 text-center anchor-description">'+anchor_tags[i].text+'</td></td><td class="border-B2B5C3-top-none padding-10 text-center anchor-new-window">'+anchor_tags[i].target+'<td class="border-B2B5C3-top-none padding-10 anchor-url text-center">'+anchor_tags[i].href+'</td><td class="border-B2B5C3-top-none padding-10 anchor-url text-center anchor-report-data" id="anchor-report-data-'+(i+1)+'">&#9661;</td></tr><tr class="white-background word-break white-background code-data-row border-B2B5C3-top-none" id="anchor-report-code-'+(i+1)+'"><td colspan="6"><textarea disabled="true" class="carolina-code-inline white-background border-B2B5C3-top-none anchor-code-data">'+anchor_tags[i].code+'</textarea></td></tr>');
 }
